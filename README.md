@@ -28,15 +28,14 @@ BookSpin AI is a fully automated **literary transformation pipeline** that reima
 
 ---
 
-## 🛠️ How It Works
+### 🛠️ How It Works
 
 ```mermaid
 graph TD
-    A[Start: Scrape Content from Wikisource] --> B[Spin with LLM (BookSpin AI)]
-    B --> C[Edit & Approve Spinned Content (User)]
-    C --> D[Review with LLM (Reviewer AI)]
-    D --> E[Edit Review & Approve (User)]
-    E --> F[Final Edit by LLM (Editor AI)]
+    A[Scrape Book Content] --> B[Spin with LLM - BookSpin AI]
+    B --> C[User Edits or Approves Spin]
+    C --> D[Review with LLM - Reviewer AI]
+    D --> E[User Edits or Approves Review]
+    E --> F[Final Edit with LLM - Editor AI]
     F --> G[User Final Approval]
-    G --> H[Save to ChromaDB with Metadata]
-
+    G --> H[Store in ChromaDB with Metadata]
