@@ -28,14 +28,17 @@ BookSpin AI is a fully automated **literary transformation pipeline** that reima
 
 ---
 
-### 🛠️ How It Works
+### 📈 Workflow Flowchart
 
 ```mermaid
 graph TD
-    A[Scrape Book Content] --> B[Spin with LLM - BookSpin AI]
-    B --> C[User Edits or Approves Spin]
-    C --> D[Review with LLM - Reviewer AI]
-    D --> E[User Edits or Approves Review]
-    E --> F[Final Edit with LLM - Editor AI]
-    F --> G[User Final Approval]
-    G --> H[Store in ChromaDB with Metadata]
+    A[Start: Web Scraping with Playwright] --> B[Extract paragraphs from book content]
+    B --> C[Store content in variable]
+    C --> D[Launch LangGraph workflow]
+    D --> E[Spin Node using LLM - Groq]
+    E --> F[Human edits spinned content]
+    F --> G[Review Node using LLM - Groq]
+    G --> H[Human edits review feedback]
+    H --> I[Edit Node using LLM - Groq]
+    I --> J[Human approves final edit]
+    J --> K[Save versions in ChromaDB with metadata]
